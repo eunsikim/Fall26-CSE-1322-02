@@ -1,8 +1,8 @@
 print("Hello")
 print("CSE 1322")
 
-my_list = []
+my_number = 10
 
-print(my_list[0])
+print(my_number.bark())
 
 print("World")
