@@ -7,9 +7,9 @@ public class Array_type {
         my_numbers[2] = 5;
 
         System.out.println(my_numbers[1]);
-        
+
         my_numbers[1] = 4;
-        
+
         System.out.println(my_numbers[1]);
     }
 }
