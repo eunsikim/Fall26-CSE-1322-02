@@ -44,6 +44,15 @@ class Student{
             System.out.println("You must be faculty to change GPA");
         }
     }
+
+    // public void print_info(){
+    //     System.out.println("Name: " + name + " GPA: " + GPA);
+    // }
+
+    @Override // The `@Override` statement is optional, but it will ensure that we are overriding a function that the class inherits
+    public String toString(){ // This method will return the specified string anytime the object is called
+        return "Name: " + name + " GPA: " + GPA;
+    }
 }
 
 public class access_modifiers {
@@ -51,24 +60,24 @@ public class access_modifiers {
         Student s1 = new Student();
         Student s2 = new Student("Dave", 3.1);
 
-        System.out.println("Name: " + s1.get_name() + " GPA: " + s1.get_GPA("Alice"));
-        System.out.println("Name: " + s2.get_name() + " GPA: " + s2.get_GPA("Alice"));
+        System.out.println(s1);
+        System.out.println(s2);
         System.out.println();
 
         s1.set_name("Eun Sik");
 
-        System.out.println("Name: " + s1.get_name() + " GPA: " + s1.get_GPA("Eun Sik"));
-        System.out.println("Name: " + s2.get_name() + " GPA: " + s2.get_GPA("Alice"));
+        System.out.println(s1);
+        System.out.println(s2);
         System.out.println();
         
         s1.set_GPA(4.0, "student");
-        System.out.println("Name: " + s1.get_name() + " GPA: " + s1.get_GPA("Eun Sik"));
-        System.out.println("Name: " + s2.get_name() + " GPA: " + s2.get_GPA("Alice"));
+        System.out.println(s1);
+        System.out.println(s2);
         System.out.println();
 
         s1.set_GPA(4.0, "faculty");
-        System.out.println("Name: " + s1.get_name() + " GPA: " + s1.get_GPA("Eun Sik"));
-        System.out.println("Name: " + s2.get_name() + " GPA: " + s2.get_GPA("Alice"));
+        System.out.println(s1);
+        System.out.println(s2);
         System.out.println();
     }
 }
