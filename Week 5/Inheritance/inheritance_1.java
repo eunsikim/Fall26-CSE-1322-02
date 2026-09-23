@@ -86,7 +86,5 @@ public class inheritance_1 {
 
         u1.print_user_info();
         u2.print_user_info();
-
-        
     }
 }
