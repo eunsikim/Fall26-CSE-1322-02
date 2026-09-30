@@ -51,7 +51,10 @@ class Player extends Entity{
     @Override 
     public void attack(Entity e){
         e.take_damage(get_damage());
-        System.out.println("Player dealt " + get_damage());
+        System.out.println("Player dealt " + get_damage() + " to " + ((Enemy)e).get_enemy_type()); 
+        // In the order of precedence, Function calls are evaluate before casting. Since the `get_enemy_type()` function
+        // exist within the Enemy and sub-enemies types, we have to cast `e` first (with parentheses) into an Enemy type before
+        // we call the function (which does not exists at Entity). 
     }
 
     @Override 
@@ -118,6 +121,7 @@ class Wraith extends Enemy{
 
     @Override 
     public void attack(Entity e){
+        
         
     }
 
