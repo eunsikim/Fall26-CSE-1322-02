@@ -1,3 +1,15 @@
+interface Irider_type{
+    public int charge(Entity e);
+}
+
+interface Ifire_type{
+    public void burning(Entity e);
+}
+
+interface Iinfected_type{
+    public void infect(Entity e);
+}
+
 abstract class Enemy extends Entity{
     private String affinity;
     private int diff_mult;

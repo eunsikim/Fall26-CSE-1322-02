@@ -9,7 +9,7 @@ public class Main {
         for(int i = 0; i < 3; i++){
             // Spawn Zombie
             if(rand.nextDouble() < .3){
-                
+
             }
             // Spawn Skeleton
             else if(rand.nextDouble() < .6){
@@ -30,30 +30,17 @@ public class Main {
     
     public static void main(String[] args) {
         spawn();
-        // Player p1 = new Player("Player1", "Fist");
+        Player player = new Player("Player1", "Fist");
 
-        // Skeleton s1 = new Skeleton("Dave", "Healthy", "Yes", 1);
+        Skeleton rider_skeleton = new rider_skeleton("bob", "alive", "tbd", 1);
+        Zombie fire_zombie = new fire_zombie("Dave", "alive", "tbd", 1);
 
-        // // Player and Skeleton Status
-        // System.out.println(p1);
-        // System.out.println(s1);
+        System.out.println(player);
+        System.out.println(fire_zombie);
         
-        // System.out.println();
+        fire_zombie.attack(player);
         
-        // // Player attacks Skeleton
-        // p1.attack(s1);
-        // System.out.println(s1);
-        
-        // System.out.println();
-        
-        // // Skeleton attacks Skeleton
-        // s1.attack(p1);
-        // System.out.println(p1);
-        
-        // System.out.println();
-        
-        // // Player and Skeleton Status
-        // System.out.println(p1);
-        // System.out.println(s1);
+        System.out.println(player);
+        System.out.println(rider_skeleton);
     }
 }
