@@ -20,7 +20,7 @@ class Horse implements Runnable{
         try{
             for(int i = 0; i < 20; i++){
                 System.out.println(name + " is in step " + (i + 1) + "/20");
-                Thread.sleep(new Random().nextInt(3000, 6001));
+                Thread.sleep(new Random().nextInt(500, 501));
             }
 
             System.out.println(name + " has crossed the finish line...");
@@ -44,5 +44,18 @@ public class horse_racer {
         horse_3.start();
         horse_4.start();
         horse_5.start();
+
+        try{
+            horse_1.join();
+            horse_2.join();
+            horse_3.join();
+            horse_4.join();
+            horse_5.join();
+        }
+        catch(InterruptedException e){
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("==========Race finished!==========");
     }
 }
