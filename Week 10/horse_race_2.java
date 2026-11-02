@@ -17,7 +17,8 @@ class Horse implements Runnable{
         try{
             for(int i = 0; i < 20; i++){
                 position++;
-                Thread.sleep(new Random().nextInt(500, 501));
+                // Thread.sleep(new Random().nextInt(500, 1000));
+                Thread.sleep(300);
                 if(i == 19){
                     Race_Track.cross_finish_line(this);
                 }
@@ -32,7 +33,8 @@ class Horse implements Runnable{
 class Race_Track{
     public static boolean finish_line_crossed = false;
 
-    public static synchronized void cross_finish_line(Horse h){
+    // public static void cross_finish_line(Horse h){ // This can cause multiple horses "winning"
+    public synchronized static void cross_finish_line(Horse h){ // This should fix the race condition by making sure only one thread uses this funciton at a time
         if(!finish_line_crossed){
             finish_line_crossed = true;
             System.out.println(h.get_name() + " crossed the finish line first");
@@ -91,7 +93,7 @@ public class horse_race_2 {
             try{
                 Race_Track.print_race_track(horses);
                 System.out.println();
-                Thread.sleep(500);
+                Thread.sleep(250);
                 if(!Race_Track.finish_line_crossed){
                     Race_Track.clear_track();
                 }
