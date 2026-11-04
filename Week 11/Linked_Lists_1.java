@@ -48,6 +48,12 @@ class linked_list{
         }
         System.out.println("null");
     }
+
+    // Create a function called "exists()" that takes an integer value.
+    // Then, the function iterates through the linked list and returns 
+    // a boolean value `true` if the parameter exists in the Linked List 
+    // or `false` otherwise.
+    
 }
 
 public class Linked_Lists_1 {
