@@ -53,12 +53,56 @@ class linked_list{
     // Then, the function iterates through the linked list and returns 
     // a boolean value `true` if the parameter exists in the Linked List 
     // or `false` otherwise.
-    
+    public boolean exists(int data){
+        for(node curr = Head; curr != null; curr = curr.next){
+            if(curr.data == data){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public void delete(int value){
+        if(Head == null){
+            System.out.println("The list is empty");
+            return;
+        }
+
+        node current = Head;
+
+        while(current.next != null && current.next.data != value){
+            current = current.next;
+        }
+
+        if(current.next == null){
+            System.out.println("The value " + value + " does not exists in the link list.");
+            return;
+        }
+        
+        System.out.println("Deleting " + value);
+        current.next = current.next.next;
+        print();
+    }
+
+    public void delete_first(){
+        if(Head == null){
+            System.out.println("The list is empty!");
+            return;
+        }
+
+        Head = Head.next;
+        print();
+    }
+
+    // Write a function that deletes the last node
 }
 
 public class Linked_Lists_1 {
     public static void main(String[] args) {
         linked_list my_linked_list = new linked_list();
+
+        my_linked_list.delete_first();
 
         my_linked_list.add_last(10);
         
@@ -72,6 +116,10 @@ public class Linked_Lists_1 {
         
         my_linked_list.print();
 
+        my_linked_list.add_last(15);
+        
+        my_linked_list.print();
+
         my_linked_list.add_last(8);
         
         my_linked_list.print();
@@ -79,5 +127,17 @@ public class Linked_Lists_1 {
         my_linked_list.add_first(0);
         
         my_linked_list.print();
+        
+        System.out.println(my_linked_list.exists(20));
+        System.out.println(my_linked_list.exists(100));
+        
+        my_linked_list.add_last(100);
+        System.out.println(my_linked_list.exists(100));
+        my_linked_list.print();
+
+        my_linked_list.delete(15);
+        my_linked_list.delete(15);
+        
+        my_linked_list.delete_first();
     }
 }
