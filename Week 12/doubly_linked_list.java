@@ -55,6 +55,10 @@ class linked_list{
             }
         }
     }
+    
+    // Add a function that adds a node in the middle.
+    // To simplify this, take in a second parameter for
+    // "index".
 
     // Remove first node
     public void remove_first(){
@@ -96,6 +100,10 @@ class linked_list{
             }
         }
     }
+
+    // Add a function that removes a node in the middle.
+    // To simplify this, take in a second parameter for
+    // "index".
 
     // Print Linked List
     public void print(){
